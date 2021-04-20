@@ -1,20 +1,10 @@
 import React from "react";
 import styles from "./Home.module.css";
 
-
 const Footer = () => {
   const onMouseOut = (e) => {
     e.target.style.color = "#cccccc";
   };
-
-  const SocialWidget = [
-    {
-      Title: "Home",
-      ProfileLink: "https://debirizk.github.io/index.html",
-      fontAwesomeIconName: "fa fa-home",
-      OnMouseOverColor: "#4875B4",
-    },
-  ];
 
   return (
     <React.Fragment>
@@ -28,34 +18,15 @@ const Footer = () => {
             textAlign: "center",
           }}
         >
+          <a
+            href="https://debirizk.github.io/index.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: "rgba(0,0,255,0.6)", textDecoration: "none" }}
+          >
+            Back to Home
+          </a>
         </h6>
-
-      </div>
-      <div className={styles.container}>
-        <br />
-        <ul className="list" style={{ listStyleType: "none" }}>
-          {SocialWidget.map((data, key) => {
-            return (
-              <li
-                key={key}
-                style={{ display: "inline-block", marginRight: "17px" }}
-              >
-                <a
-                  onMouseOver={(e) => {
-                    e.target.style.color = `${data.OnMouseOverColor}`;
-                  }}
-                  onMouseOut={onMouseOut}
-                  href={data.ProfileLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ color: "#cccccc", fontSize: "40px" }}
-                >
-                  <i className={`${data.fontAwesomeIconName}`}></i>
-                </a>
-              </li>
-            );
-          })}
-        </ul>
       </div>
     </React.Fragment>
   );

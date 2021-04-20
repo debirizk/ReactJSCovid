@@ -1,10 +1,12 @@
 import React, {useState} from "react";
-import { Cards, CardsGlobal,  CountryPicker } from "./Components";
+import { Cards, CountryPicker } from "./Components";
 import styles from "./App.module.css";
 import { fetchData } from "./api";
 import {fetchDailyData} from "./api";
 import coronaImage from "./images/image.png";
 import Home from "./Components/Home/Home";
+import axios from "axios";
+import Global from "./Components/Global/Global.jsx";
 
 class App extends React.Component {
   state = {
@@ -27,10 +29,11 @@ class App extends React.Component {
         <img className={styles.image} src={coronaImage} alt="COVID-19" />
         <br />
         <br />
-        <CardsGlobal data={data} country={"Global"}/>
+        <Global /> 
         <CountryPicker handleCountryChange={this.handleCountryChange} />
         <Cards data={data} country={country} />
         <Home />
+        
       </div>
     );
   }

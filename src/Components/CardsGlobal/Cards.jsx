@@ -4,8 +4,7 @@ import styles from "./Cards.module.css";
 import CountUp from "react-countup";
 import cx from "classnames";
 import {fetchDailyData} from "../../api";
-
-
+import axios from 'axios';
 
 const Cards = ({
   data: { confirmed, recovered, deaths},
@@ -22,27 +21,24 @@ const Cards = ({
   if (!confirmed) {
     return "Loading...";
   }
-  // const active = confirmed["value"] - recovered["value"] - deaths["value"];
   let carddetails = [
     {
       style: styles.infected,
       text: "Confirmed",
-      // value: confirmed.value,
-      value: latest.confirmed.value,
-      // (({ confirmed }) => confirmed),
-      bottomText: "Number of infect cases of COVID-19",
+      value: confirmed.value,
+      bottomText: "Angka Orang Terinfeksi Covid-19",
     },
     {
       style: styles.recovered,
       text: "Recovered",
-      value: latest.recovered.value,
-      bottomText: "Number of recoveries from COVID-19",
+      value: recovered.value,
+      bottomText: "Angka Orang Sembuh dari Covid-19",
     },
     {
       style: styles.deaths,
       text: "Deaths",
-      value: latest.deaths.value,
-      bottomText: "Number of deaths caused by COVID-19",
+      value: deaths.value,
+      bottomText: "Angka Orang Meninggal karena Covid-19",
     },
   ];
   return (
@@ -79,5 +75,4 @@ const Cards = ({
     </div>
   );
 };
-
 export default Cards;

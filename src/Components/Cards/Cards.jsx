@@ -17,19 +17,19 @@ const Cards = ({
       style: styles.infected,
       text: "Confirmed",
       value: confirmed.value,
-      bottomText: "Number of infect cases of COVID-19",
+      bottomText: "Angka Orang Terinfeksi Covid-19",
     },
     {
       style: styles.recovered,
       text: "Recovered",
       value: recovered.value,
-      bottomText: "Number of recoveries from COVID-19",
+      bottomText: "Angka Orang Sembuh dari Covid-19",
     },
     {
       style: styles.deaths,
       text: "Deaths",
       value: deaths.value,
-      bottomText: "Number of deaths caused by COVID-19",
+      bottomText: "Angka Orang Meninggal karena Covid-19",
     },
   ];
   return (
